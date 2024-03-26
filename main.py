@@ -13,7 +13,7 @@ HASHES = {}
 
 # Precompute hashes for all challenges
 for challenge in CHALLEGNGES:
-    HASHES[challenge] = imagehash.dhash(Image.open(challenge))
+    HASHES[challenge] = imagehash.dhash(Image.open(os.path.join("challenges",challenge)))
 
 # Set up the favicon and title
 st.set_page_config(
