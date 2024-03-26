@@ -8,7 +8,7 @@ from PIL import Image
 import imagehash
 from streamlit_image_comparison import image_comparison
 
-CHALLEGNGES = ["girrafe.png","surf.png"]
+CHALLEGNGES = ["giraffe.png","surf.png"]
 HASHES = {}
 
 # Precompute hashes for all challenges
