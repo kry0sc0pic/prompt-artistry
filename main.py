@@ -8,11 +8,11 @@ from PIL import Image
 import imagehash
 from streamlit_image_comparison import image_comparison
 
-CHALLEGNGES = ["giraffe.png","surf.png"]
+CHALLENGES = ["chicken.png", "unicorn.png","robot.png","dino.png","monkey.png","squirrel.png"]
 HASHES = {}
 
 # Precompute hashes for all challenges
-for challenge in CHALLEGNGES:
+for challenge in CHALLENGES:
     HASHES[challenge] = imagehash.dhash(Image.open(os.path.join("challenges",challenge)))
 
 # Set up the favicon and title
@@ -24,7 +24,7 @@ st.set_page_config(
 st.title("Prompt Artistry")
 
 # Challenge Picker
-challenge = st.selectbox("Select a challenge", CHALLEGNGES)
+challenge = st.selectbox("Select a challenge", CHALLENGES)
 with st.expander("Challenge"):
     st.image(os.path.join("challenges",challenge),use_column_width=True,width=500)
 
