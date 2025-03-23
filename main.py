@@ -1,12 +1,15 @@
 import io
 import os
 import requests
-
+from dotenv import load_dotenv
 import streamlit as st
 import replicate
 from PIL import Image
 import imagehash
 from streamlit_image_comparison import image_comparison
+
+
+load_dotenv()
 
 CHALLENGES = ["chicken.png", "unicorn.png","robot.png","dino.png","monkey.png","squirrel.png"]
 HASHES = {}
@@ -43,7 +46,8 @@ if submit:
                 "num_inference_steps": 60,
                 "num_inference_steps_prior": 25,
                 "seed": 69420
-            }
+            },
+            
         )
 
     response = requests.get(output[0])
